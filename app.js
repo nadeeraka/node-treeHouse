@@ -1,11 +1,15 @@
 const express = require("express");
 const app = express();
 
-app.set("name", "value");
+app.set("view engine", "ejs");
 // ! app set allow to set values globally on express application
 
 app.get("/", (req, res) => {
-  res.sendFile("main");
+  res.render("main");
+});
+
+app.get("/admin", (req, res) => {
+  res.render("admin");
 });
 
 const PORT = process.env.PORT || 8080;
