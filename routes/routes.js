@@ -13,5 +13,8 @@ router.post("/admin", (req, res) => {
   console.log(req.body);
   res.render("admin");
 });
+router.use((req, res) => {
+  res.render("404");
+});
 
 module.exports = router;
